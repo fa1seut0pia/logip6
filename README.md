@@ -37,9 +37,19 @@ apk add oath-toolkit-oathtool coreutils lighttpd
 # 以后台运行的方式启动
 docker run -d --name logip6 --network host --restart always -e OATH_INTERFACE=ens192 fa1seut0pias/logip6
 
-# 查看日志
-docker logs -f logip6
+```
 
+or
+
+```shell
+
+docker run -d --name logip6 --network host --restart always -e OATH_INTERFACE=ens192 ghcr.io/fa1seut0pia/logip6
+
+```
+查看日志
+
+```shell
+docker logs -f logip6
 ```
 
 构建
