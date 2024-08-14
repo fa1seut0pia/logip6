@@ -61,6 +61,9 @@ else
   echo "OTP: $OTP"
 fi
 
+# otpauth://totp/{label}?secret={secret}&issuer={issuer}&algorithm={algorithm}&digits={digits}&period={period}
+qrencode -t UTF8 "otpauth://totp/log6ip?secret=$OTP&issuer=log6ip&algorithm=SHA1&digits=6&period=30"
+
 if [ ! -d "$HOME/.config" ]; then
     # 如果 .config 目录不存在，则创建
     mkdir -p "$HOME/.config"
