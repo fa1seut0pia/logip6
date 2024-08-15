@@ -1,5 +1,9 @@
 # 一个开放web服务的shell脚本,用于获取服务器IPv6地址
 
+
+![logip6](./assets/logip6.png)
+
+
 ## 0x00 使用方式
 
 ```shell
