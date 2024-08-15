@@ -7,7 +7,8 @@ echo "  _|_|_   \\___/   |___/   _|_|_   |_|__   \\___/  "
 echo "_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"| "
 echo "\"\`-0-0-'\"\`-0-0-'\"\`-0-0-'\"\`-0-0-'\"\`-0-0-'\"\`-0-0-' "
 echo ""
-echo "parameter e.g.: --otp="your_base32_otp" --ip=0.0.0.0 --port=8080 --interface=ens192"
+echo "command run e.g.: ./lighttpd_oash_get_ip6.sh --otp="your_base32_otp" --ip=0.0.0.0 --port=8080 --interface=ens192"
+echo "docker run e.g.: docker run -id --name logip6 --network host --restart always -e OATH_PORT=8080 -e OATH_INTERFACE=ens192 ghcr.io/fa1seut0pia/logip6"
 echo ""
 # 解析命令行参数
 while [ $# -gt 0 ]; do

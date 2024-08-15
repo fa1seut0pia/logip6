@@ -18,6 +18,33 @@ curl http://域名/{6位TOTP值}
 # 可选 sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 apk add oath-toolkit-oathtool coreutils lighttpd
 
+# qrencode 需要自己编译
+apk add --no-cache --virtual .build-deps \
+        build-base \
+        autoconf \
+        automake \
+        libtool \
+        git \
+        libpng-dev \
+        && \
+    git clone --depth 1 https://github.com/fukuchi/libqrencode.git && \
+    cd libqrencode && \
+    ./autogen.sh && \
+    ./configure --prefix=/usr && \
+    make && \
+    make install && \
+    cd .. && \
+    rm -rf libqrencode && \
+    apk del .build-deps
+    
+```
+
+### 2. 其他
+
+```shell
+apt install oathtool lighttpd qrencode
+# or
+dnf install oathtool lighttpd qrencode
 ```
 
 ## 0x03 运行方式
